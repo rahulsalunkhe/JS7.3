@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Javascript type</title>
+	<script type="text/javascript">
+	var number = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'];
+		function checkType(a)
+		{
+			var counter=0; 
+			a=a.toLowerCase();
+			for(i=0;i<a.length;i++)
+			{	 	
+				for(j=0;j<number.length;j++)
+				{
+					if(a[i] == number[j])
+					{
+						counter++;
+					}
+				}
+			}
+			if(counter > 0)
+			{
+				document.getElementById('showType').value = document.getElementById('numberField').value;
+				document.getElementById('showType').style.backgroundColor = "red";
+			}
+			else
+			{
+				alert("The number is a valid number type");
+				document.getElementById('showType').value = " ";
+				document.getElementById('showType').style.backgroundColor = "white";
+			}
+			
+		}
+	</script>
+</head>
+<body onchange="checkType(document.getElementById('numberField').value);">
+<input type="text" name="numberField" id="numberField">
+<input type="text" name="showType" id="showType">
+</body>
+</html>
